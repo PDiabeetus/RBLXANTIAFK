@@ -1,4 +1,5 @@
 local loadmsg="[Loading]:"
+local status="Disabled"
 print(loadmsg,"SGUI")
 local UI=Instance.new("ScreenGui", game.CoreGui)
 print(loadmsg,"UIF")
@@ -28,11 +29,10 @@ Label.Position=UDim2.new(0.024,0, 0.089,0)
 Label.BackgroundColor3=Color3.new(0.0823529, 0.670588, 1)
 Label.Text="Status : "..status.." | Player Status : Undefined"
 Label.TextScaled=true
-print(loadmsg,"Complete")
 local minimized=false
-local status="Disabled"
 local mouse=game.Players.LocalPlayer:GetMouse()
 local VU=game:GetService("VirtualUser")
+print(loadmsg,"Complete")
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then
 		UIF:TweenPosition(

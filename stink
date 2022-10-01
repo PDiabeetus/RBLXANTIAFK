@@ -43,7 +43,7 @@ Min_Max.MouseButton1Down:Connect(function()
 		minimized=true
 	elseif minimized==true then
 		UIF:TweenPosition(
-			UDim2.new(0,836,0, 0.435,0),
+			UDim2.new(0.836,0, 0.435,0),
 			"Out",
 			"Elastic"
 		)

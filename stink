@@ -29,8 +29,8 @@ print("Label")
 print("Loaded")
 local minimized=false
 local status="Disabled"
-local FramePosition=UIF.Position
-print(FramePosition)
+local FP=UIF.Position
+print(FP)
 local mouse=game.Players.LocalPlayer:GetMouse()
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then
@@ -51,7 +51,6 @@ Min_Max.MouseButton1Down:Connect(function()
 		minimized=false
 	end
 end)
-
 Enable_Disable.MouseButton1Down:Connect(function()
 	if status=="Disabled" then
 		status="Enabled"

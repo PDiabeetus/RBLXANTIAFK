@@ -64,6 +64,7 @@ Enable_Disable.MouseButton1Down:Connect(function()
 			Label.Text="Status : "..status.." | Player Status : Idle"
 			VU:GetController()
 			VU:ClickMouseButton2()
+			wait(1)
 			print("Idle=false")
 			Label.BackGroundColor3=Color3.new(0.0823529,0.670588,1)
 			Label.Text="Status : "..status.." | Player Status : Active"

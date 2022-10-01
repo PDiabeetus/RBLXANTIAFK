@@ -29,7 +29,7 @@ print("Label")
 print("Loaded")
 local minimized=false
 local status="Disabled"
-local FramePosition=UIF.Postion
+local FramePosition=UIF.Position
 print(FramePosition)
 local mouse=game.Players.LocalPlayer:GetMouse()
 Min_Max.MouseButton1Down:Connect(function()

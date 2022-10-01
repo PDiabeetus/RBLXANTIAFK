@@ -51,6 +51,7 @@ Min_Max.MouseButton1Down:Connect(function()
 		minimized=false
 	end
 end)
+
 Enable_Disable.MouseButton1Down:Connect(function()
 	if status=="Disabled" then
 		status="Enabled"

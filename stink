@@ -11,6 +11,7 @@ Min_Max.Position=UDim2.new(-0.143,0, 0.333,0)
 Min_Max.BackgroundTransparency=1
 Min_Max.Text=">"
 Min_Max.TextScaled=true
+Min_Max.TextColor3=Color3.new(0, 0, 0)
 print("MM")
 local Enable_Disable=Instance.new("TextButton", UIF)
 Enable_Disable.Size=UDim2.new(0,200, 0,50)

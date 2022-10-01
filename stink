@@ -29,8 +29,6 @@ print("Label")
 print("Loaded")
 local minimized=false
 local status="Disabled"
-local FP=UIF.Position
-print(FP)
 local mouse=game.Players.LocalPlayer:GetMouse()
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then

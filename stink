@@ -29,7 +29,7 @@ print("Label")
 print("Loaded")
 local minimized=false
 local status="Disabled"
-local VU=game:GetService("VirtualUser")
+
 local mouse=game.Players.LocalPlayer:GetMouse()
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then
@@ -57,8 +57,7 @@ Enable_Disable.MouseButton1Down:Connect(function()
 		Enable_Disable.Text=status
 		game.Players.LocalPlayer.Idled:Connect(function()
 			warn("Idle=true")
-			VU:GetController()
-			VU:ClickMouseButton2()
+
 			print("Idle=false")
 		end)
 	elseif status=="Enabled" then

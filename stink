@@ -26,12 +26,13 @@ local Label=Instance.new("TextLabel", UIF)
 Label.Size=UDim2.new(0,200, 0,20)
 Label.Position=UDim2.new(0.024,0, 0.089,0)
 Label.BackgroundColor3=Color3.new(0.0823529, 0.670588, 1)
-Label.Text="Status"
+Label.Text="Status :",status,"| Player Status : Undefined"
 Label.TextScaled=true
 print(loadmsg,"Complete")
 local minimized=false
 local status="Disabled"
 local mouse=game.Players.LocalPlayer:GetMouse()
+local VU=game:GetService("VirtualUser")
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then
 		UIF:TweenPosition(
@@ -54,15 +55,22 @@ end)
 Enable_Disable.MouseButton1Down:Connect(function()
 	if status=="Disabled" then
 		status="Enabled"
+		Label.Text="Status :",status,"| Player Status : Active"
 		print(status)
 		Enable_Disable.Text=status
 		game.Players.LocalPlayer.Idled:Connect(function()
 			warn("Idle=true")
-
+			Label.BackGroundColor3=Color3.new(0.705882,0,0)
+			Label.Text="Status :",status,"| Player Status : Idle"
+			VU:GetController()
+			VU:ClickMouseButton2()
 			print("Idle=false")
+			Label.BackGroundColor3=Color3.new(0.0823529,0.670588,1)
+			Label.Text="Status :",status,"| Player Status : Active"
 		end)
 	elseif status=="Enabled" then
 		status="Disabled"
+		Label.Text="Status :",status,"| Player Status : Undefined"
 		print(status)
 		Enable_Disable.Text=status
 	end

@@ -43,7 +43,7 @@ print("Loading complete")
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then
 		UIF:TweenPosition(
-			UDim2.new(1,0, 0.435,0),
+			UDim2.new(1.005,0, 0.435,0),
 			"Out",
 			"Elastic"
 		)

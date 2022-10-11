@@ -39,7 +39,7 @@ print(loadedmsg,"Label")
 local minimized=false
 local mouse=game.Players.LocalPlayer:GetMouse()
 local VU=game:GetService("VirtualUser")
-print"Loading complete")
+print("Loading complete")
 Min_Max.MouseButton1Down:Connect(function()
 	if minimized==false then
 		UIF:TweenPosition(

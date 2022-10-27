@@ -1,0 +1,85 @@
+local loadmsg="[Loading]:"
+local loadedmsg="[Loaded]:"
+local status="Disabled"
+print(loadmsg,"SGUI")
+local UI=Instance.new("ScreenGui", game.CoreGui)
+print(loadedmsg,"SGUI")
+print(loadmsg,"UIF")
+local UIF=Instance.new("Frame", UI)
+UIF.Size=UDim2.new(0,210, 0,105)
+UIF.Position=UDim2.new(0.836,0, 0.435,0)
+UIF.BackgroundColor3=Color3.new(0.301961,0.301961,  0.301961)
+print(loadedmsg,"UIF")
+print(loadmsg,"MM")
+local Min_Max=Instance.new("TextButton", UIF)
+Min_Max.Size=UDim2.new(0,35, 0,35)
+Min_Max.Position=UDim2.new(-0.143,0, 0.333,0)
+Min_Max.BackgroundTransparency=1
+Min_Max.Text=">"
+Min_Max.TextScaled=true
+Min_Max.TextColor3=Color3.new(0,0,0)
+print(loadedmsg,"MM")
+print(loadmsg,"ED")
+local Enable_Disable=Instance.new("TextButton", UIF)
+Enable_Disable.Size=UDim2.new(0,200, 0,50)
+Enable_Disable.Position=UDim2.new(0.023,0, 0.393,0)
+Enable_Disable.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)
+Enable_Disable.Text="Disabled"
+Enable_Disable.TextScaled=true
+Enable_Disable.TextColor3=Color3.new(0,0,0)
+print(loadedmsg,"ED")
+print(loadmsg,"Label")
+local Label=Instance.new("TextLabel", UIF)
+Label.Size=UDim2.new(0,200, 0,20)
+Label.Position=UDim2.new(0.024,0, 0.089,0)
+Label.BackgroundColor3=Color3.new(0.0823529,0.670588,1)
+Label.Text="Status : "..status.." | Player Status : Undefined"
+Label.TextScaled=true
+print(loadedmsg,"Label")
+local minimized=false
+local mouse=game.Players.LocalPlayer:GetMouse()
+local VU=game:GetService("VirtualUser")
+print("Loading complete")
+Min_Max.MouseButton1Down:Connect(function()
+	if minimized==false then
+		UIF:TweenPosition(
+			UDim2.new(1.005,0, 0.435,0),
+			"Out",
+			"Elastic"
+		)
+		Min_Max.Text="<"
+		minimized=true
+	elseif minimized==true then
+		UIF:TweenPosition(
+			UDim2.new(0.836,0, 0.435,0),
+			"Out",
+			"Elastic"
+		)
+		Min_Max.Text=">"
+		minimized=false
+	end
+end)
+Enable_Disable.MouseButton1Down:Connect(function()
+	if status=="Disabled" then
+		status="Enabled"
+		Label.Text="Status : "..status.." | Player Status : Active"
+		print(status)
+		Enable_Disable.Text=status
+		game.Players.LocalPlayer.Idled:Connect(function()
+			warn("Idle=true")
+			Label.BackgroundColor3=Color3.new(0.705882,0,0)
+			Label.Text="Status : "..status.." | Player Status : Idle"
+			VU:CaptureController()
+			VU:ClickButton2(Vector2.new())
+			wait(1)
+			print("Idle=false")
+			Label.BackgroundColor3=Color3.new(0.0823529,0.670588,1)
+			Label.Text="Status : "..status.." | Player Status : Active"
+		end)
+	elseif status=="Enabled" then
+		status="Disabled"
+		Label.Text="Status : "..status.." | Player Status : Undefined"
+		print(status)
+		Enable_Disable.Text=status
+	end
+end)

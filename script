@@ -49,6 +49,7 @@ function updateIC()
 	IdleCount.Text="IdleCount: "..ICVariable
 end
 updateIC()
+print(loadedmsg,"IdleCount")
 local minimized=false
 local mouse=game.Players.LocalPlayer:GetMouse()
 local VU=game:GetService("VirtualUser")

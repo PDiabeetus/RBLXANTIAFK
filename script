@@ -22,7 +22,7 @@ print(loadedmsg,"MM")
 print(loadmsg,"ED")
 local Enable_Disable=Instance.new("TextButton", UIF)
 Enable_Disable.Size=UDim2.new(0,200, 0,50)
-Enable_Disable.Position=UDim2.new(0.024,0, 0.33,0)
+Enable_Disable.Position=UDim2.new(0.024,0, 0.3,0)
 Enable_Disable.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)
 Enable_Disable.Text="Disabled"
 Enable_Disable.TextScaled=true
@@ -31,7 +31,7 @@ print(loadedmsg,"ED")
 print(loadmsg,"Label")
 local Label=Instance.new("TextLabel", UIF)
 Label.Size=UDim2.new(0,200, 0,20)
-Label.Position=UDim2.new(0.024,0, 0.089,0)
+Label.Position=UDim2.new(0.024,0, 0.055,0)
 Label.BackgroundColor3=Color3.new(0.0823529,0.670588,1)
 Label.Text="Status : "..status.." | Player Status : Undefined"
 Label.TextScaled=true
@@ -40,16 +40,15 @@ print(loadmsg,"IdleCount")
 local IdleCount=Instance.new("TextLabel", UIF)
 local ICVariable=0
 IdleCount.Size=UDim2.new(0,200, 0,12)
-IdleCount.Position=UDim2.new(0.024,0, 0.855,0)
+IdleCount.Position=UDim2.new(-0.27,0, 0.84,0)
 IdleCount.TextScaled=true
-IdleCount.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)
+IdleCount.BackgroundTransparency=1
 IdleCount.TextColor3=Color3.new(0, 0, 0)
 IdleCount.RichText=true
 function updateIC()
-	IdleCount.Text="IdleCount: "..ICVariable
+	IdleCount.Text="| Idle Count: "..ICVariable.." |"
 end
 updateIC()
-print(loadedmsg,"IdleCount")
 local minimized=false
 local mouse=game.Players.LocalPlayer:GetMouse()
 local VU=game:GetService("VirtualUser")
